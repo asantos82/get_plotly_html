@@ -1,0 +1,22 @@
+https://www.reddit.com/r/datascience/comments/3u0l28/utilizing_pythons_plotly_api_to_generate/
+
+
+Utilizing Python's Plotly API to Generate Embeddable HTML (self.datascience)
+submitted 4 months ago by pm8k
+With plotly's javascript open sourced, we can now create plotly plots without having to export images to their servers. After a post by /u/pybokeh (linked here) which explains how to use plotly's offline mode in iPython, I looked to find how to generate plotly plots outside of ipython.
+Here is the link to the notebook.
+We can generate the html and javascript we need to embed a plotly image into any webpage. We can even embed it into Data Spyre. I previously added a talk going over how to setup a Data Spyre app and how to embed Pygal and Bokeh images into it. Now, we can add plotly to the list!
+This is a very rough draft I came up with today, so if you have any insights/comments/updates I can make, let me know. Good luck everyone!
+3 commentssharepocket
+all 3 comments
+sorted by: best
+[–]pybokeh 2 points 4 months ago 
+Nice! But I haven't been able to get your example working. The problem is I am not very versed in javascript. I'm not sure what to do with your HTML output. I put <html> at the beginning and </html> at the end of your html output, then saved as "some_file.html" into same folder as plotly.min.js file is located at, but the html page just shows "Drawing..."
+So not sure what I"m doing wrong. I'm a noob when it comes to web dev.
+permalinkpocket
+[–]pm8k[S] 1 point 4 months ago 
+The reason I use Data Spyre is because I am also a noob when it comes to web dev. I haven't been able to get it working off a static .html file (and I just tried again) or else I probably would have posted that too :( But I did try the data spyre code that's at the end of the notebook and i had the functionality in the webapp. I'm wondering if you need some server to run the html, while a static html file might not be able to render it, but that's just speculation.
+permalinkparentpocket
+[–]Murica4Eva 1 point 4 months ago 
+You have the correct answer. You need a server to render the JavaScript. You could do something like run this on a linux server running apache and save the output to a web directory, which will then render. Or you could kick off a simple server:
+https://docs.python.org/2/library/simplehttpserver.html
